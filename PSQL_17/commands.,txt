@@ -1,0 +1,12 @@
+# Docker Run
+docker-compose up -d
+
+
+# Docker Down
+docker-compose down
+
+# Get into DB
+docker exec -it postgres17-local bash
+
+# Create Network to use PSQL
+docker network create net_dbs

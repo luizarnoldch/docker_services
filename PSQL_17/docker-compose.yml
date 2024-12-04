@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  postgres_dev:
+    image: postgres:17
+    restart: always
+    container_name: postgres_dev
+    environment:
+      POSTGRES_USER: postgres # postgres - default
+      POSTGRES_PASSWORD: postgres
+      # POSTGRES_DB: public # public - default
+    ports:
+      - "5432:5432"
+    volumes:
+      - "./pgdata:/var/lib/postgresql/data"
+    networks:
+      - net_dbs
+networks:
+  net_dbs:
+    external: true
